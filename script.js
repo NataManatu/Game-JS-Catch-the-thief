@@ -11,6 +11,7 @@ let peopleVisible = false
 
 function gameLoop() {
     peopleVisible = !peopleVisible;
+    creatCharacters();
     flashCharacters();
     loops++;
     if (loops < 12) {
@@ -20,9 +21,21 @@ function gameLoop() {
         alert("game over!");
     }
 }
+
+function creatCharacters() {
+    let board = document.getElementById("board")
+    for (let index = 0; index < 6; index++) {
+        board.children[index].innerHTML = "гость";
+
+    }
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    board.children[randomNumber - 1].innerHTML = "вор"
+}
+
+
+
 function flashCharacters() {
     let board = document.getElementById("board");
-    let classToSet = "";
     if (peopleVisible) {
         classToSet = "character visible";
     }
