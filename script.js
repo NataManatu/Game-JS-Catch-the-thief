@@ -6,14 +6,21 @@ function startGame() {
 
 buttonStart.addEventListener("click", startGame)
 
-let loops = 0
+let loops = 0;
+let peopleVisible = false
+
 function gameLoop() {
+    peopleVisible = !peopleVisible
     loops++;
     if (loops < 12) {
         setTimeout(gameLoop, 3000);
     }
-    else{
+    else {
         alert("game over!");
     }
+}
+function flashCharacters() {
+    let board = document.getElementById("board");
+    let classToSet = "";
 
 }
