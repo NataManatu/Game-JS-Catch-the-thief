@@ -24,9 +24,16 @@ function gameLoop() {
 
 function creatCharacters() {
     let board = document.getElementById("board")
+    if (peopleVisible) {
+        classToSet = "character visible";
+    }
+    else {
+        classToSet = "character hidden ";
+    }
     for (let index = 0; index < 6; index++) {
+        board.children[index].className = classToSet;
         board.children[index].innerHTML = "гость";
-
+        
     }
     let randomNumber = Math.floor(Math.random() * 6) + 1;
     board.children[randomNumber - 1].innerHTML = "вор"
@@ -36,14 +43,9 @@ function creatCharacters() {
 
 function flashCharacters() {
     let board = document.getElementById("board");
-    if (peopleVisible) {
-        classToSet = "character visible";
-    }
-    else {
-        classToSet = "character hidden ";
-    }
+    
     for (let index = 0; index < 6; index++) {
-        board.children[index].className = classToSet;
+        
 
     }
 }
