@@ -13,7 +13,7 @@ let gameScore = 0;
 
 function gameLoop() {
     peopleVisible = !peopleVisible;
-    creatCharacters();
+    creatGuest();
     loops++;
     if (loops < 16) {
         setTimeout(gameLoop, 2000);
@@ -23,13 +23,13 @@ function gameLoop() {
     }
 }
 
-function creatCharacters() {
+function creatGuest() {
     let board = document.getElementById("board")
     if (peopleVisible) {
-        classToSet = "character visible";
+        classToSet = "guest visible";
     }
     else {
-        classToSet = "character hidden ";
+        classToSet = "guest hidden ";
     }
     for (let index = 0; index < 8; index++) {
         board.children[index].className = classToSet;
