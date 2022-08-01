@@ -15,7 +15,7 @@ function gameLoop() {
     peopleVisible = !peopleVisible;
     creatCharacters();
     loops++;
-    if (loops < 12) {
+    if (loops < 16) {
         setTimeout(gameLoop, 2000);
     }
     else {
@@ -31,17 +31,17 @@ function creatCharacters() {
     else {
         classToSet = "character hidden ";
     }
-    for (let index = 0; index < 6; index++) {
+    for (let index = 0; index < 8; index++) {
         board.children[index].className = classToSet;
-        board.children[index].onclick=function () {
+        board.children[index].onclick = function () {
             gameScore += -2;
         }
     }
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
-    board.children[randomNumber - 1].onclick=function () {
+    let randomNumber = Math.floor(Math.random() * 8) + 1;
+    board.children[randomNumber - 1].onclick = function () {
         gameScore++;
     }
-    board.children[randomNumber-1].className=classToSet + " thief"
+    board.children[randomNumber - 1].className = classToSet + " thief"
 }
 
 
