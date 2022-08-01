@@ -8,17 +8,18 @@ buttonStart.addEventListener("click", startGame)
 
 let loops = 0;
 let peopleVisible = false
+let gameScore = 0;
+
 
 function gameLoop() {
     peopleVisible = !peopleVisible;
     creatCharacters();
-    flashCharacters();
     loops++;
     if (loops < 12) {
-        setTimeout(gameLoop, 3000);
+        setTimeout(gameLoop, 2000);
     }
     else {
-        alert("game over!");
+        alert("твой счет " + gameScore);
     }
 }
 
@@ -32,20 +33,16 @@ function creatCharacters() {
     }
     for (let index = 0; index < 6; index++) {
         board.children[index].className = classToSet;
-        board.children[index].innerHTML = "гость";
-        
+        board.children[index].onclick=function () {
+            gameScore += -2;
+        }
     }
     let randomNumber = Math.floor(Math.random() * 6) + 1;
-    board.children[randomNumber - 1].innerHTML = "вор"
-}
-
-
-
-function flashCharacters() {
-    let board = document.getElementById("board");
-    
-    for (let index = 0; index < 6; index++) {
-        
-
+    board.children[randomNumber - 1].onclick=function () {
+        gameScore++;
     }
+    board.children[randomNumber-1].className=classToSet + " thief"
 }
+
+
+
