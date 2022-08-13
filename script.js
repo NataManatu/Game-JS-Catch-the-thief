@@ -1,4 +1,5 @@
 let buttonStart = document.getElementById("button-start")
+let gameOver=document.getElementById("game-over")
 
 function startGame() {
     gameLoop();
@@ -19,7 +20,9 @@ function gameLoop() {
         setTimeout(gameLoop, 2000);
     }
     else {
-        alert("твой счет " + gameScore);
+       
+        gameOver.style.display = "block"
+        gameOver.innerHTML="твой счет " + gameScore
     }
 }
 
