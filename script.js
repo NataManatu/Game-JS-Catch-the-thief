@@ -17,12 +17,13 @@ function gameLoop() {
     creatGuest();
     loops++;
     if (loops < 16) {
-        setTimeout(gameLoop, 2000);
+        setTimeout(gameLoop, 1000);
     }
     else {
        
         gameOver.style.display = "block"
-        gameOver.innerHTML="твой счет " + gameScore
+        gameOver.innerHTML="<p> GAME OVER!</p> твой счет " + gameScore
+        
     }
 }
 
