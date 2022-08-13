@@ -17,7 +17,7 @@ function gameLoop() {
     creatGuest();
     loops++;
     if (loops < 16) {
-        setTimeout(gameLoop, 1000);
+        setTimeout(gameLoop, 2000);
     }
     else {
        
